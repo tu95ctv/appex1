@@ -8,8 +8,8 @@
                 <form string="licensecertificate">
                     <header>
                         <button class="oe_highlight" type="object" string="Send Mail To Admin" name="send_mail_to_admin" />
-                        <button class="oe_highlight" type="object" string="set_is_expire_false" name="set_is_expire_false" />
-                        <!-- 
+                        <!--<button class="oe_highlight" type="object" string="set_is_expire_false" name="set_is_expire_false" />
+                         
             		<button class="oe_highlight" type="object" string="send_mail_expire" name="send_mail_expire"  />
             		<button class="oe_highlight" type="object" string="load_form_mail" name="load_form_mail"  />
             		<button class="oe_highlight" type="object" string="test_message_post" name="test_message_post"  />
