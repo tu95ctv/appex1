@@ -1,0 +1,16 @@
+<odoo>
+<data>
+	  <record id="ir_cron_mail_scheduler_check_license" model="ir.cron">
+            <field name="name">ir.cron.mail.scheduler.check.license</field>
+            <field name="model_id" ref="model_eastlog_licensecertificate"/>
+            <field name="state">code</field>
+            <field name="code">model.check_expire_and_send_mail()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field name="active">True</field> 
+      </record>
+</data>
+</odoo>

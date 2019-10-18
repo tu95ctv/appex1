@@ -1,0 +1,178 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eastlog
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0-20180210\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-17 05:46+0000\n"
+"PO-Revision-Date: 2019-10-17 05:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+
+#. module: eastlog
+#: code:addons/eastlog/models/models.py:91
+#: code:addons/eastlog/models/models.py:113
+#, python-format
+msgid "%s, Waiting for %s to %s"
+msgstr "%s, Waiting for %s to %s"
+
+#. module: eastlog
+#: model:ir.model,name:eastlog.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.view_partner_form
+msgid "Core Business"
+msgstr "Core Business"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_description
+msgid "Description"
+msgstr "Miêu tả"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_expiration_date
+#: model:ir.ui.view,arch_db:eastlog.license_document
+#: model:ir.ui.view,arch_db:eastlog.license_table
+msgid "Expiration Date"
+msgstr "Ngày hết hạn"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_fleet_vehicle_id
+msgid "Fleet Vehicle"
+msgstr "Fleet Vehicle"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eastlog
+#: model:ir.model,name:eastlog.model_fleet_vehicle
+msgid "Information on a vehicle"
+msgstr "Information on a vehicle"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate___last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_last_registration_date
+#: model:ir.ui.view,arch_db:eastlog.license_document
+#: model:ir.ui.view,arch_db:eastlog.license_table
+msgid "Last Registration Date"
+msgstr "Ngày đăng kiểm cuối cùng"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: eastlog
+#: model:ir.actions.act_window,name:eastlog.licensecertificate_action
+#: model:ir.model,name:eastlog.model_eastlog_licensecertificate
+#: model:ir.ui.menu,name:eastlog.menu_licensecertificate
+msgid "License Certificate"
+msgstr "License Certificate"
+
+#. module: eastlog
+#: model:ir.actions.report,name:eastlog.action_report_license_certifcate
+msgid "License Certificate Report"
+msgstr "License Certificate Report"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_fleet_vehicle_licensecertificate_ids
+msgid "Licensecertificate"
+msgstr "Licensecertificate"
+
+#. module: eastlog
+#: model:ir.model.fields,field_description:eastlog.field_eastlog_licensecertificate_name
+msgid "Name"
+msgstr "Tên"
+
+#. module: eastlog
+#: model:mail.template,subject:eastlog.license_certificate
+msgid "New Notification about License Certificate Expire - ${object.name}"
+msgstr "New Notification about License Certificate Expire - ${object.name}"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.license_document
+#: model:ir.ui.view,arch_db:eastlog.license_table
+msgid "Vehicle"
+msgstr "Phương tiện"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.view_id
+msgid "abc"
+msgstr "abc"
+
+#. module: eastlog
+#: model:ir.model,name:eastlog.model_ir_actions_report
+msgid "ir.actions.report"
+msgstr "ir.actions.report"
+
+#. module: eastlog
+#: model:mail.template,report_name:eastlog.license_certificate
+msgid "license_certifcate"
+msgstr "license_certifcate"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_form_view
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_list_view
+msgid "licensecertificate"
+msgstr "licensecertificate"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_form_view
+msgid "load_form_mail"
+msgstr "load_form_mail"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_form_view
+msgid "send_mail_expire"
+msgstr "send_mail_expire"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_form_view
+msgid "send_mail_expire_template"
+msgstr "send_mail_expire_template"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_form_view
+msgid "send_mail_use_mail_normal"
+msgstr "send_mail_use_mail_normal"
+
+#. module: eastlog
+#: model:ir.ui.view,arch_db:eastlog.licensecertificate_form_view
+msgid "test_message_post"
+msgstr "test_message_post"
+

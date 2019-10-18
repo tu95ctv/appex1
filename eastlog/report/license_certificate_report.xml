@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report 
+            id="action_report_license_certifcate"
+            string="License Certificate Report"
+            model="eastlog.licensecertificate" 
+            report_type="qweb-pdf"
+            file="eastlog.licensecertificate_report" 
+            name="eastlog.licensecertificate_report"
+            print_report_name="'license_certificate_%s'%object.name.replace(' ','_')"
+            
+        /><!-- print_report_name="licensecertificate_print_report_name" -->
+    </data>
+</odoo>

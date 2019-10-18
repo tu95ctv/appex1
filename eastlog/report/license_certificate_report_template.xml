@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="license_document">
+        <t t-call="web.external_layout">
+            <!--   <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" /> -->
+            
+            <p style="text-align: center;font-weight:bold;font-size:30px;margin:50px 0px 40px 0px;">
+            LICENSE CERTIFICATE REPORT
+         </p>
+         
+            <t t-call="eastlog.license_table" />
+        </t>
+    </template>
+    <template id="license_table_email">
+        <div>
+            <b>Dear Admin!</b>
+            <p t-if="doc.is_expire">This is notification expired license</p>
+        </div>
+        <t t-call="eastlog.license_table" t-lang="vi_VN" />
+    </template>
+    <template id="license_table">
+        <!-- <t t-set="doc" t-value="doc.with_context(lang=doc.env.user.lang)" />  -->
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #dddddd;">Vehicle</th>
+                    <th style="border: 1px solid #dddddd;">Last Registration Date</th>
+                    <th style="border: 1px solid #dddddd;">Expiration Date</th>
+                    <th style="border: 1px solid #dddddd;">Expire state</th>
+                </tr>
+            </thead>
+            <tbody class="sale_tbody">
+                <tr>
+                    <td style="border: 1px solid #dddddd;">
+                        <span t-field="doc.vehicle_id.name" />
+                    </td>
+                    <td style="border: 1px solid #dddddd;">
+                        <span t-field="doc.last_registration_date" />
+                    </td>
+                    <td style="border: 1px solid #dddddd;">
+                        <span t-field="doc.expiration_date" />
+                    </td>
+                    <td style="border: 1px solid #dddddd;">
+                        <t t-if="doc.is_expire">
+                            <input type="checkbox" id="checkbox104_anything_you_give" checked="checked" />
+                        </t>
+                        <t t-if="not doc.is_expire">
+                            <input type="checkbox" id="checkbox104_anything_you_give" />
+                        </t>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+    <template id="licensecertificate_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="eastlog.license_document" />
+                <!-- t-lang="doc.partner_id.lang" -->
+            </t>
+        </t>
+    </template>
+</odoo>
