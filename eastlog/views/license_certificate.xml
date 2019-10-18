@@ -1,88 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-   <data>
-      <record id="licensecertificate_form_view" model="ir.ui.view">
-         <field name="name">licensecertificate.form</field>
-         <field name="model">eastlog.licensecertificate</field>
-         <field name="arch" type="xml">
-            <form string="licensecertificate">
-            	<header>
-            		<button class="oe_highlight" type="object" string="Send Mail To Admin" name="send_mail_to_admin"  />
-            		<!-- 
+    <data>
+        <record id="licensecertificate_form_view" model="ir.ui.view">
+            <field name="name">licensecertificate.form</field>
+            <field name="model">eastlog.licensecertificate</field>
+            <field name="arch" type="xml">
+                <form string="licensecertificate">
+                    <header>
+                        <button class="oe_highlight" type="object" string="Send Mail To Admin" name="send_mail_to_admin" />
+                        <button class="oe_highlight" type="object" string="set_is_expire_false" name="set_is_expire_false" />
+                        <!-- 
             		<button class="oe_highlight" type="object" string="send_mail_expire" name="send_mail_expire"  />
             		<button class="oe_highlight" type="object" string="load_form_mail" name="load_form_mail"  />
             		<button class="oe_highlight" type="object" string="test_message_post" name="test_message_post"  />
             		<button class="oe_highlight" type="object" string="send_mail_use_mail_normal" name="send_mail_use_mail_normal"  />
             	 -->
-            	</header>
-               <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name"/>
-                        </h1>
-                    </div>
-                    <group>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
                         <group>
-		                      <field name="vehicle_id" readonly="1" />
-		                     <field name="description" />
+                            <group>
+                                <field name="vehicle_id" readonly="1" />
+                                <field name="description" />
+                            </group>
+                            <group>
+                                <field name="last_registration_date" />
+                                <field name="expiration_date" />
+                                <field name="is_expire" attrs="{'readonly':[('is_expire','=',False)]}" force_save="1" />
+                                <field name="resend_mail" attrs="{'invisible':[('is_expire','=',False)]}" ></field>
+                            </group>
                         </group>
-                        <group>
-                             <field name="last_registration_date" />
-		                     <field name="expiration_date" />
-		                     <field name="is_expire" attrs="{'readonly':[('is_expire','=',False)]}" force_save="1"/>
-                        </group>
-                    </group>
-               </sheet>
-               <div class="oe_chatter">
+                    </sheet>
+                    <div class="oe_chatter">
                         <field name="message_follower_ids" widget="mail_followers" groups="base.group_user" />
                         <field name="activity_ids" widget="mail_activity" />
                         <field name="message_ids" widget="mail_thread" />
-                 </div>
-            </form>
-         </field>
-      </record>
-      <record id="licensecertificate_list_view" model="ir.ui.view">
-         <field name="name">licensecertificate.list</field>
-         <field name="model">eastlog.licensecertificate</field>
-         <field name="arch" type="xml">
-            <tree string="licensecertificate" ><!-- editable="bottom" -->
-               		  <field name="name" />
-                      <field name="vehicle_id" />
-                     <field name="description" />
-                     <field name="last_registration_date" />
-                     <field name="expiration_date" />
-                     <field name="is_expire" />
-            </tree>
-         </field>
-      </record>
-      
-      <record id="licensecertificate_search_view" model="ir.ui.view">
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="licensecertificate_list_view" model="ir.ui.view">
+            <field name="name">licensecertificate.list</field>
+            <field name="model">eastlog.licensecertificate</field>
+            <field name="arch" type="xml">
+                <tree string="licensecertificate">
+                    <!-- editable="bottom" -->
+                    <field name="name" />
+                    <field name="vehicle_id" />
+                    <field name="description" />
+                    <field name="last_registration_date" />
+                    <field name="expiration_date" />
+                    <field name="is_expire" />
+                    <field name="resend_mail"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="licensecertificate_search_view" model="ir.ui.view">
             <field name="name">eastlog.licensecertificate.search</field>
             <field name="model">eastlog.licensecertificate</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <filter name="vehicle_id_group" string="Vehicle" context="{'group_by':'vehicle_id'}"/>
-                    <filter name="is_expire" string="Expire" context="{'group_by':'is_expire'}"/>
+                    <field name="name" />
+                    <field name="description" />
+                    <filter name="vehicle_id_group" string="Vehicle" context="{'group_by':'vehicle_id'}" />
+                    <filter name="is_expire" string="Expire" context="{'group_by':'is_expire'}" />
                 </search>
             </field>
         </record>
-        
-        
-      <record id="licensecertificate_action" model="ir.actions.act_window">
-         <field name="name">License Certificate</field>
-         <field name="res_model">eastlog.licensecertificate</field>
-         <field name="view_type">form</field>
-         <field name="view_mode">tree,form</field>
-         <field name="domain" />
-         <field name="context">{}</field>
-      </record>
-      
-   	 <menuitem id="menu_licensecertificate" name="License Certificate" parent="fleet.fleet_vehicles" action="licensecertificate_action"   />
-   </data>
+        <record id="licensecertificate_action" model="ir.actions.act_window">
+            <field name="name">License Certificate</field>
+            <field name="res_model">eastlog.licensecertificate</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain" />
+            <field name="context">{}</field>
+        </record>
+        <menuitem id="menu_licensecertificate" name="License Certificate" parent="fleet.fleet_vehicles" action="licensecertificate_action" />
+    </data>
 </odoo>
-
-
-   	 
-   	 

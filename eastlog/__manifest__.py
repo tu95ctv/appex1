@@ -32,6 +32,7 @@
         'report/license_certificate_report.xml',
         'data/mail_template.xml',
         'data/license_check_cron.xml',
+        'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

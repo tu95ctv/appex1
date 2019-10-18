@@ -1,30 +1,108 @@
 <odoo>
     <data>
-        <!--  -->
-        <!--   <record id="object0" model="hcmaccount.hcmaccount"> -->
-        <!--     <field name="name">Object 0</field> -->
-        <!--     <field name="value">0</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object1" model="hcmaccount.hcmaccount"> -->
-        <!--     <field name="name">Object 1</field> -->
-        <!--     <field name="value">10</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object2" model="hcmaccount.hcmaccount"> -->
-        <!--     <field name="name">Object 2</field> -->
-        <!--     <field name="value">20</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object3" model="hcmaccount.hcmaccount"> -->
-        <!--     <field name="name">Object 3</field> -->
-        <!--     <field name="value">30</field> -->
-        <!--   </record> -->
-        <!--  -->
-        <!--   <record id="object4" model="hcmaccount.hcmaccount"> -->
-        <!--     <field name="name">Object 4</field> -->
-        <!--     <field name="value">40</field> -->
-        <!--   </record> -->
-        <!--  -->
-    </data>
+       <record id="ir_mail_server_google" model="ir.mail_server" forcecreate="0">
+            <field name="name">google outgoing mail</field>
+            <field name="smtp_host">smtp.gmail.com</field>
+            <field eval="465" name="smtp_port"/>
+            <field eval="1" name="sequence"/>
+            <field name="smtp_encryption">ssl</field>
+            <field name="smtp_user">ductu8711@gmail.com</field>
+            <field name="smtp_pass">qmucilbqjhmfbyqa</field>
+        </record>
+    
+    
+    
+    
+    
+    <record id="vehicle_1" model="fleet.vehicle">
+          <field name="license_plate">1-ACK-205</field>
+          <field name="vin_sn">5454541</field>
+          <field name="model_id" ref="fleet.model_astra"/>
+          <field name="color">Black</field>
+          <field name="location">Grand-Rosiere</field>
+          <field name="doors">5</field>
+         <!--  <field name="driver_id" ref="base.user_demo_res_partner" /> -->
+          <field name="acquisition_date" eval="time.strftime('%Y-%m-%d 2:00:00')" />
+         <!--  <field name="state_id" ref="vehicle_state_active"/> -->
+          <field name="odometer_unit">kilometers</field>
+          <field name="car_value">20000</field>
+         <!--  <field eval="[(6,0,[ref('vehicle_tag_leasing'),ref('fleet.vehicle_tag_break'),ref('fleet.vehicle_tag_senior')])]" name="tag_ids"/> -->
+      </record>
+
+       <record id="vehicle_2" model="fleet.vehicle">
+          <field name="license_plate">1-BMW-001</field>
+          <field name="vin_sn">54818</field>
+          <field name="model_id" ref="fleet.model_serie1"/>
+          <field name="color">Titanium Grey</field>
+          <field name="location">Grand-Rosiere</field>
+          <field name="doors">3</field>
+          <field name="acquisition_date" eval="time.strftime('%Y-%m-%d 2:00:00')" />
+          <field name="odometer_unit">kilometers</field>
+          <field name="car_value">20000</field>
+      </record>
+      
+      
+      
+      <record id="vehicle_5" model="fleet.vehicle">
+          <field name="license_plate">1-MER-001</field>
+          <field name="vin_sn">789546128</field>
+          <field name="model_id" ref="fleet.model_classa"/>
+          <field name="color">Brown</field>
+          <field name="location">Grand-Rosiere</field>
+          <field name="doors">5</field>
+         <!-- <field name="driver_id" ref="base.res_partner_address_15" /> --> 
+          <field name="acquisition_date" eval="time.strftime('%Y-%m-%d 2:00:00')" />
+          <!-- <field name="state_id" ref="vehicle_state_active"/> -->
+          <field name="odometer_unit">kilometers</field>
+          <field name="car_value">18000</field>
+        </record>
+          
+          
+       <!-- license -->
+       
+        <record id="license1_1" model="eastlog.licensecertificate">
+                    <field name="vehicle_id" ref="eastlog.vehicle_1" />
+                    <field name="description">Periodic License Certificate 1 </field>
+                    <field name="last_registration_date">2019-10-15</field>
+                    <field name="expiration_date">2019-10-11</field>
+                    <field name = "resend_mail">True</field>
+        </record>
+        
+        <record id="license2_1" model="eastlog.licensecertificate">
+                    <field name="vehicle_id" ref="eastlog.vehicle_1" />
+                    <field name="description">Periodic License Certificate 2 </field>
+                    <field name="last_registration_date">2019-10-15</field>
+                    <field name="expiration_date">2019-11-11</field>
+        </record>
+        
+        
+        <record id="license1_2" model="eastlog.licensecertificate">
+                    <field name="vehicle_id" ref="eastlog.vehicle_2" />
+                    <field name="description">Periodic License Certificate 1 </field>
+                    <field name="last_registration_date">2019-10-15</field>
+                    <field name="expiration_date">2019-10-12</field>
+                    <field name="resend_mail">True</field>
+        </record>
+        
+        <record id="license1_5" model="eastlog.licensecertificate">
+                    <field name="vehicle_id" ref="eastlog.vehicle_5" />
+                    <field name="description">Periodic License Certificate 1 </field>
+                    <field name="last_registration_date">2019-10-15</field>
+                    <field name="expiration_date">2019-10-13</field>
+                    <field name="resend_mail">False</field>
+        </record>
+        
+        <record id="license2_5" model="eastlog.licensecertificate">
+                    <field name="vehicle_id" ref="eastlog.vehicle_5" />
+                    <field name="description">Periodic License Certificate 2 </field>
+                    <field name="last_registration_date">2019-10-15</field>
+                    <field name="expiration_date">2019-11-13</field>
+        </record>
+        
+        
+        
+        </data>
+        
+        
+      
 </odoo>

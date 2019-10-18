@@ -3,11 +3,9 @@
     <template id="license_document">
         <t t-call="web.external_layout">
             <!--   <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" /> -->
-            
             <p style="text-align: center;font-weight:bold;font-size:30px;margin:50px 0px 40px 0px;">
             LICENSE CERTIFICATE REPORT
          </p>
-         
             <t t-call="eastlog.license_table" />
         </t>
     </template>
@@ -24,6 +22,7 @@
             <thead>
                 <tr>
                     <th style="border: 1px solid #dddddd;">Vehicle</th>
+                    <th style="border: 1px solid #dddddd;">Description</th>
                     <th style="border: 1px solid #dddddd;">Last Registration Date</th>
                     <th style="border: 1px solid #dddddd;">Expiration Date</th>
                     <th style="border: 1px solid #dddddd;">Expire state</th>
@@ -33,6 +32,9 @@
                 <tr>
                     <td style="border: 1px solid #dddddd;">
                         <span t-field="doc.vehicle_id.name" />
+                    </td>
+                    <td style="border: 1px solid #dddddd;">
+                        <span t-field="doc.description" />
                     </td>
                     <td style="border: 1px solid #dddddd;">
                         <span t-field="doc.last_registration_date" />

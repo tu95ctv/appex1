@@ -21,30 +21,46 @@ class LicenseCertificate(models.Model):
     _name = 'eastlog.licensecertificate'
     _description = 'License Certificate'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    vehicle_id = fields.Many2one('fleet.vehicle')
+    vehicle_id = fields.Many2one('fleet.vehicle', required=True)
     name = fields.Char(compute='_name_compute', store=True)
-    description = fields.Text()
+    description = fields.Text(required=True)
     last_registration_date = fields.Date(default=fields.Date.context_today)
-    def offset_date(self):
-        today = datetime.date.today()
-        print ('today',today,type(today))
-        the_day = today + datetime.timedelta(days=-7)
-        return the_day
-    expiration_date = fields.Date(default=offset_date)
-    is_expire = fields.Boolean('Expire')
+#     def offset_date(self):
+#         today = datetime.date.today()
+#         print ('today',today,type(today))
+#         the_day = today + datetime.timedelta(days=-7)
+#         return the_day
+    expiration_date = fields.Date(default=fields.Date.context_today,required = True)
+    is_expire = fields.Boolean('Expire', compute ='_is_expire_compute', store=True )
+    resend_mail =  fields.Boolean(help='Resend mail when license expire')
 #     body_html = fields.Html()
    
-    
+    @api.depends('expiration_date')
+    def _is_expire_compute(self):
+        for r in self:
+            is_expire = fields.Date.from_string(r.expiration_date) < fields.Date.from_string(fields.Date.context_today(self))
+            r.is_expire = is_expire
+   
+#     @api.onchange('expiration_date')
+#     def _is_expire_onchange(self):
+#         if self.expiration_date:
+#             is_expire = fields.Date.from_string(self.expiration_date) < fields.Date.from_string(fields.Date.context_today(self))
+#             self.is_expire = is_expire
+            
     def check_expire_and_send_mail(self):
-        licenses = self.search([])
+        licenses = self.search(['|', ('is_expire', '=', False), ('resend_mail', '=', True)])
         for r in licenses:
             print ('***check_expire_and_send_mail for***',r.name)
             expiration_date = fields.Date.from_string(r.expiration_date)
             is_expire = expiration_date < fields.Date.from_string(fields.Date.context_today(self))
-            old_is_expire = r.is_expire
-            if is_expire and not old_is_expire:
-                r.is_expire = True
+#             if is_expire and not old_is_expire:
+            if is_expire:
+                if r.is_expire == False:
+                    r.is_expire = is_expire
                 r.send_mail_to_admin()
+                r.resend_mail = False
+    def set_is_expire_false(self):
+        self.is_expire = False
             
     @api.depends('description','vehicle_id')
     def _name_compute(self):
