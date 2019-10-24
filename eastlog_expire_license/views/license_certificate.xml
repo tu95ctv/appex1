@@ -59,6 +59,8 @@
                 </tree>
             </field>
         </record>
+
+        
         <record id="licensecertificate_search_view" model="ir.ui.view">
             <field name="name">eastlog.licensecertificate.search</field>
             <field name="model">eastlog.licensecertificate</field>
