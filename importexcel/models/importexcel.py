@@ -2,7 +2,7 @@
 from odoo import models, fields, api,exceptions,tools,_
 import re
 from odoo.addons.importexcel.models.model_dict_folder.tao_instance_new import importexcel_func
-from odoo.addons.tonkho.models.import_excel_model_dict_folder.model_dict import default_import_xl_setting
+# from odoo.addons.tonkho.models.import_excel_model_dict_folder.model_dict import default_import_xl_setting
 from odoo.exceptions import UserError
 from odoo.tools.float_utils import float_compare, float_round
 # from odoo.addons.importexcel.models.model_dict_folder.recursive_func import export_all_no_pass_dict_para
@@ -10,14 +10,14 @@ from odoo.tools.float_utils import float_compare, float_round
 class CommonSetting(models.Model):
     _name = 'importexcel.commonsetting'
     _auto = False
-    st_allow_func_map_database_existence = fields.Boolean(default = default_import_xl_setting['default_st_allow_func_map_database_existence'])
-    st_is_allow_write_existence  = fields.Boolean(default = default_import_xl_setting['default_st_is_allow_write_existence'])
-    st_allow_check_if_excel_is_same_existence  = fields.Boolean(string=u'Cho phép đối chiếu product excel obj với product exist object',default = default_import_xl_setting['default_st_allow_check_if_excel_is_same_existence'])
-    st_is_allow_empty_xldata_pn_is_unique_same_name_product  = fields.Boolean(default = default_import_xl_setting['default_st_is_allow_empty_xldata_pn_is_unique_same_name_product'],
-                                                                              string='Cho phép sản phẩm có pn trống ờ file tương ứng với sản phẩm cùng tên và duy nhất')
-    st_is_allow_nonempty_pn_xldata_pr_is_empty_pn_same_name_pr  = fields.Boolean(default = default_import_xl_setting['default_st_is_allow_nonempty_pn_xldata_pr_is_empty_pn_same_name_pr'], 
-                                                                                 string='Cho phép sản phẩm ở file excel có pn tương ứng với sản phẩm có cùng tên nhưng pn trống'
-                                                                                 )
+#     st_allow_func_map_database_existence = fields.Boolean(default = default_import_xl_setting['default_st_allow_func_map_database_existence'])
+#     st_is_allow_write_existence  = fields.Boolean(default = default_import_xl_setting['default_st_is_allow_write_existence'])
+#     st_allow_check_if_excel_is_same_existence  = fields.Boolean(string=u'Cho phép đối chiếu product excel obj với product exist object',default = default_import_xl_setting['default_st_allow_check_if_excel_is_same_existence'])
+#     st_is_allow_empty_xldata_pn_is_unique_same_name_product  = fields.Boolean(default = default_import_xl_setting['default_st_is_allow_empty_xldata_pn_is_unique_same_name_product'],
+#                                                                               string='Cho phép sản phẩm có pn trống ờ file tương ứng với sản phẩm cùng tên và duy nhất')
+#     st_is_allow_nonempty_pn_xldata_pr_is_empty_pn_same_name_pr  = fields.Boolean(default = default_import_xl_setting['default_st_is_allow_nonempty_pn_xldata_pr_is_empty_pn_same_name_pr'], 
+#                                                                                  string='Cho phép sản phẩm ở file excel có pn tương ứng với sản phẩm có cùng tên nhưng pn trống'
+#                                                                                  )
     
     
     

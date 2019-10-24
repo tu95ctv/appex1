@@ -12,7 +12,6 @@
                   <button name="importexcel" string="import" type="object" class="btn-primary" />
                   <button name="import_all" string="import all" type="object" class="btn-primary" />
                   <button name="check_file" string="check_file" type="object" class="btn-primary" />
-                  <button name="set_parameter_tonkho" string="set_parameter_tonkho" type="object" class="btn-primary" />
                   <button name="test_code" string="test_code" type="object" class="btn-primary" />
                   <button name="look_soi" string="look_soi" type="object" class="btn-primary" />
                   <button name="test_code_2" string="test_code_2" type="object" class="btn-primary" />
@@ -49,12 +48,15 @@
                      </group>
                      
                         <group string="Chưa Xài">
+                           <!-- 
                             <field name="st_allow_func_map_database_existence" groups="base.group_erp_manager" />
                         	<field name="st_allow_check_if_excel_is_same_existence" groups="base.group_erp_manager" />
                             <field name="st_is_allow_write_existence" groups="base.group_erp_manager" />
                             <field name="st_is_allow_empty_xldata_pn_is_unique_same_name_product" groups="base.group_erp_manager" />
                             <field name="st_is_allow_nonempty_pn_xldata_pr_is_empty_pn_same_name_pr" groups="base.group_erp_manager" />
+                      		-->
                      </group>
+                     
                   </group>
                </sheet>
             </form>
